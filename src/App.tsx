@@ -1,14 +1,9 @@
-import { LoginForm } from "./components/forms/LoginForm"
+import { AppRouter } from './router/AppRouter';
 
 function App() {
-
   return (
-    <div className="container">
-      <h1>Hooooolaaaaa</h1>
-      <p>Un parrafo</p>
-      <LoginForm />
-    </div>
-  )
+    <AppRouter />
+  );
 }
 
-export default App
+export default App;
