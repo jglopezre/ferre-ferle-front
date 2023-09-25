@@ -20,7 +20,8 @@ export function LoginForm() {
   return (
     <div className="p-3 shadow" style={{ maxWidth: '500px', minWidth: '360px' }}>
       <Form onSubmit={onSubmitHandle}>
-        <legend>Inicie Sesión</legend>
+        <legend className="display-4">Inicie Sesión</legend>
+        <br />
         <FormGroup>
           <Label for="user">Usuario</Label>
           <Input id="user" type="email" placeholder="pedroperez@micompñia.com.ve" />
@@ -37,7 +38,7 @@ export function LoginForm() {
       <br />
       <div className="d-flex justify-content-center w-100">
         <p>
-          <strong>Restablecer</strong>
+          <strong className="text-primary">Restablecer </strong>
           su contraseña
         </p>
       </div>

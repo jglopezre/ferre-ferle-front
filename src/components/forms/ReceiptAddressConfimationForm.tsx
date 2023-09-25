@@ -17,7 +17,7 @@ export function ReceiptAddresConfirmationForm() {
   return (
     <div className="p-3 shadow" style={{ minWidth: '360px', maxWidth: '600px' }}>
       <Form onSubmit={onSubmitHandle}>
-        <legend>Confirme su dierección</legend>
+        <legend className="display-4">Confirme su dierección</legend>
         <br />
         <p>Puede modificar la dirección para recibir su pedido</p>
         <Row>

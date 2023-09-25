@@ -33,7 +33,7 @@ export function UserRegisterForm() {
   return (
     <div className="p-3 shadow" style={{ minWidth: '360px', maxWidth: '600px' }}>
       <Form onSubmit={onSubmitHandle}>
-        <legend>Regsitro de Nuevo Usuario</legend>
+        <legend className="display-4">Regsitro de Nuevo Usuario</legend>
         <br />
         <Row className="mt-2">
           <Col sm={6}>

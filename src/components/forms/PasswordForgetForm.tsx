@@ -17,7 +17,7 @@ export function PasswordForgetForm() {
   return (
     <div className="p-3 shadow" style={{ minWidth: '360px', maxWidth: '600px' }}>
       <Form onSubmit={onSubmitHandle}>
-        <legend>Olvidé mi Contraseña</legend>
+        <legend className="display-4">Olvidé mi Contraseña</legend>
         <br />
         <p>Puede modificar la dirección para recibir su pedido</p>
         <Row>
