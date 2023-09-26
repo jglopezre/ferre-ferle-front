@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import {
   Button, Col, Form, FormGroup, Input, Label, Row,
 } from 'reactstrap';
 
 // eslint-disable-next-line import/prefer-default-export
 export function UserRegisterForm() {
+  const navigateTo = useNavigate();
+
   const onSubmitHandle = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
@@ -28,6 +31,11 @@ export function UserRegisterForm() {
       password,
       confirmationPassword,
     });
+  };
+
+  const onCancelHandle = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
+    navigateTo(-1);
   };
 
   return (
@@ -99,7 +107,7 @@ export function UserRegisterForm() {
         </Row>
         <Row className="mt-3">
           <Col sm={{ size: 4, offset: 4 }}>
-            <Button color="primary" outline style={{ width: '100%' }}>Cancelar</Button>
+            <Button onClick={onCancelHandle} color="primary" outline style={{ width: '100%' }}>Cancelar</Button>
           </Col>
           <Col sm={{ size: 4 }}>
             <Button color="primary" style={{ width: '100%' }}>Enviar</Button>

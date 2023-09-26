@@ -1,0 +1,34 @@
+@use "../node_modules/bootstrap/scss/functions" as fn;
+
+// Custom Theme colors
+$red-ferle: #e21617;
+$yellow-ferle: #fec811;
+
+//red-ferle-tones
+$red-ferle-100: fn.tint-color($red-ferle, 80%);
+$red-ferle-200: fn.tint-color($red-ferle, 60%);
+$red-ferle-300: fn.tint-color($red-ferle, 40%);
+$red-ferle-400: fn.tint-color($red-ferle, 20%);
+$red-ferle-500: $red-ferle;
+$red-ferle-600: fn.shade-color($red-ferle, 20%);
+$red-ferle-700: fn.shade-color($red-ferle, 40%);
+$red-ferle-800: fn.shade-color($red-ferle, 60%);
+$red-ferle-900: fn.shade-color($red-ferle, 80%);
+
+// yellow-ferle-themes
+$yellow-ferle-100: fn.tint-color($yellow-ferle, 80%);
+$yellow-ferle-200: fn.tint-color($yellow-ferle, 60%);
+$yellow-ferle-300: fn.tint-color($yellow-ferle, 40%);
+$yellow-ferle-400: fn.tint-color($yellow-ferle, 20%);
+$yellow-ferle-500: $yellow-ferle;
+$yellow-ferle-600: fn.shade-color($yellow-ferle, 20%);
+$yellow-ferle-700: fn.shade-color($yellow-ferle, 40%);
+$yellow-ferle-800: fn.shade-color($yellow-ferle, 60%);
+$yellow-ferle-900: fn.shade-color($yellow-ferle, 80%);
+
+$primary: $red-ferle-700;
+$secondary: $yellow-ferle-400;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+

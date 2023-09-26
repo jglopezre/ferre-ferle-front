@@ -1,9 +1,12 @@
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Form, FormGroup, Input, Label, Button,
 } from 'reactstrap';
 
 // eslint-disable-next-line import/prefer-default-export
 export function LoginForm() {
+  const navigateTo = useNavigate();
+
   const onSubmitHandle = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const user = (event.currentTarget.elements[0] as HTMLInputElement).value;
@@ -14,7 +17,12 @@ export function LoginForm() {
 
   const onCancelHandle = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
     event.preventDefault();
-    console.log(event);
+    navigateTo(-1);
+  };
+
+  const onRegisterHandle = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+    event.preventDefault();
+    navigateTo('/userRegistration');
   };
 
   return (
@@ -32,14 +40,15 @@ export function LoginForm() {
         </FormGroup>
         <div className="d-flex justify-content-end gap-3 w-100">
           <Button onClick={onCancelHandle} color="primary" outline>Cancelar</Button>
+          <Button onClick={onRegisterHandle} color="secondary">Registrar</Button>
           <Button color="primary">Entrar</Button>
         </div>
       </Form>
       <br />
       <div className="d-flex justify-content-center w-100">
         <p>
-          <strong className="text-primary">Restablecer </strong>
-          su contraseña
+          <Link to="/forgetPassword">Restablecer</Link>
+          &nbsp; su contraseña
         </p>
       </div>
     </div>

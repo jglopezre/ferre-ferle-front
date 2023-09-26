@@ -3,7 +3,7 @@ import {
   Button, Card, CardBody, CardSubtitle, CardText, CardTitle,
 } from 'reactstrap';
 import { ProductCardProps } from '../types';
-
+import styles from '../scss/productCard.module.scss';
 // eslint-disable-next-line import/prefer-default-export
 export function ProductCard(props: ProductCardProps) {
   const {
@@ -16,13 +16,12 @@ export function ProductCard(props: ProductCardProps) {
 
   return (
     <Card color="white" style={{ width: '18rem' }}>
-      <img
-        alt={name}
-        src={imageUrl}
-      />
+      <div className={styles.imageHolder}>
+        <img src={imageUrl} alt={name} />
+      </div>
       <CardBody>
         <CardTitle tag="h2">
-          <Link to="./productDetail">
+          <Link to={`/productDetail/id=${id}`}>
             {name}
           </Link>
         </CardTitle>

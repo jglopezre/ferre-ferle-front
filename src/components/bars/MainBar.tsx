@@ -4,10 +4,13 @@ import {
 import { SearchForm } from '../forms';
 import { CartButton, PaymentButton, UserButton } from '../buttons';
 import { BrandLogoHolder } from '../BrandLogoHolder';
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line import/prefer-default-export
 export function MainBar() {
   const DEFAULT_BUTTON_SIZE = '1.5rem';
+  const navigateTo = useNavigate();
+
   return (
     <Navbar>
       <Row className="w-100">
@@ -21,7 +24,7 @@ export function MainBar() {
         </Col>
         <Col xl="2" className="d-flex justify-content-around">
           <PaymentButton size={DEFAULT_BUTTON_SIZE} onClick={() => {}} />
-          <UserButton size={DEFAULT_BUTTON_SIZE} onClick={() => {}} />
+          <UserButton size={DEFAULT_BUTTON_SIZE} onClick={() => navigateTo('/login')} />
           <CartButton size={DEFAULT_BUTTON_SIZE} onClick={() => {}} />
         </Col>
       </Row>
