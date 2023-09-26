@@ -5,7 +5,7 @@ import { LogoHolderProps } from '../types';
 export function BrandLogoHolder({ size }: LogoHolderProps) {
   return (
     <Link to="/home">
-      <img src="logo.png" width={size.toString()} height={size.toString()} alt="" />
+      <img src="assets/image/logo.png" width={size.toString()} height={size.toString()} alt="" />
     </Link>
   );
 }
