@@ -1,0 +1,17 @@
+.buttonHolder {
+  height: 100%;
+  position: relative;
+}
+
+.circleNumber {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  width: 22px;
+  height: 18px;
+  background-color: red;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+}

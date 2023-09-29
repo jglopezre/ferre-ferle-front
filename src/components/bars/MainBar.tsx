@@ -1,10 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import {
   Col, Navbar, NavbarBrand, Row,
 } from 'reactstrap';
 import { SearchForm } from '../forms';
 import { CartButton, PaymentButton, UserButton } from '../buttons';
 import { BrandLogoHolder } from '../BrandLogoHolder';
-import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line import/prefer-default-export
 export function MainBar() {
@@ -25,7 +25,7 @@ export function MainBar() {
         <Col xl="2" className="d-flex justify-content-around">
           <PaymentButton size={DEFAULT_BUTTON_SIZE} onClick={() => {}} />
           <UserButton size={DEFAULT_BUTTON_SIZE} onClick={() => navigateTo('/login')} />
-          <CartButton size={DEFAULT_BUTTON_SIZE} onClick={() => {}} />
+          <CartButton size={DEFAULT_BUTTON_SIZE} onClick={() => navigateTo('/productList')} />
         </Col>
       </Row>
     </Navbar>

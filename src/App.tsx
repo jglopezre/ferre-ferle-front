@@ -1,11 +1,14 @@
 import { Layout } from './components/Layout';
+import { CartContextProvider } from './contexts';
 import { AppRouter } from './router/AppRouter';
 
 function App() {
   return (
-    <Layout>
-      <AppRouter />
-    </Layout>
+    <CartContextProvider>
+      <Layout>
+        <AppRouter />
+      </Layout>
+    </CartContextProvider>
   );
 }
 

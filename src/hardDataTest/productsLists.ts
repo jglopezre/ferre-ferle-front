@@ -1,10 +1,11 @@
 import { ProductsBySection } from '../types';
-import { HomePageContext } from './HomePageContext';
 
-const productsList: Array<ProductsBySection> = [
+// eslint-disable-next-line import/prefer-default-export
+export const productsList: Array<ProductsBySection> = [
   {
     sectionId: 'x001',
     sectionName: 'Herramientas Electricas',
+    sectionImageUrl: 'https://picsum.photos/1440/900',
     productList: [
       {
         id: 'aaaa-bbbb-000001',
@@ -75,6 +76,7 @@ const productsList: Array<ProductsBySection> = [
   {
     sectionId: 'x002',
     sectionName: 'Construcción y Albañilería',
+    sectionImageUrl: 'https://picsum.photos/1440/900',
     productList: [
       {
         id: 'aaaa-bbbb-000001',
@@ -145,6 +147,7 @@ const productsList: Array<ProductsBySection> = [
   {
     sectionId: 'x003',
     sectionName: 'Electricidad',
+    sectionImageUrl: 'https://picsum.photos/1440/900',
     productList: [
       {
         id: 'aaaa-bbbb-000001',
@@ -215,6 +218,7 @@ const productsList: Array<ProductsBySection> = [
   {
     sectionId: 'x004',
     sectionName: 'Carpintería',
+    sectionImageUrl: 'https://picsum.photos/1440/900',
     productList: [
       {
         id: 'aaaa-bbbb-000001',
@@ -283,15 +287,3 @@ const productsList: Array<ProductsBySection> = [
     ],
   },
 ];
-
-interface ContextProviderProps {
-  children: JSX.Element
-}
-// eslint-disable-next-line import/prefer-default-export
-export function HomePageContextProvider({ children }: ContextProviderProps) {
-  return (
-    <HomePageContext.Provider value={productsList}>
-      {children}
-    </HomePageContext.Provider>
-  );
-}

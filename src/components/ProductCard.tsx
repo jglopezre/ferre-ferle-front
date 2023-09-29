@@ -1,21 +1,32 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Button, Card, CardBody, CardSubtitle, CardText, CardTitle,
 } from 'reactstrap';
 import { ProductCardProps } from '../types';
 import { ImageHolder } from './ImageHolder';
+import { CartContext } from '../contexts';
 // eslint-disable-next-line import/prefer-default-export
 export function ProductCard(props: ProductCardProps) {
   const {
     id, imageUrl, name, code, description, price,
   } = props;
 
-  const onClickHandle = () => {
+  const { dispatch } = useContext(CartContext);
+
+  const onAddCartHandle = () => {
+    dispatch({
+      type: 'CART_REDUCER-add-product',
+      payload: {
+        id, imageUrl, name, code, description, price,
+      },
+    });
+
     console.log(`Producto id: ${id} agregado al carrito`);
   };
 
   return (
-    <Card color="white" style={{ width: '18rem' }}>
+    <Card color="white" style={{ width: '19rem' }}>
       <ImageHolder url={imageUrl} alt={name} wrapperSize={{ width: '100%', height: 200 }} />
       <CardBody>
         <CardTitle tag="h2">
@@ -34,7 +45,7 @@ export function ProductCard(props: ProductCardProps) {
           <strong style={{ fontSize: '1.6rem' }}>{price}</strong>
           &nbsp;$USD
         </CardText>
-        <Button onClick={() => onClickHandle()} color="primary" className="w-100">
+        <Button onClick={() => onAddCartHandle()} color="primary" className="w-100">
           Agregar al Carrito
         </Button>
       </CardBody>

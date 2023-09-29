@@ -1,6 +1,6 @@
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import { ProductCardProps } from '../types';
+import { ProductCarouselProps } from '../types';
 import { ProductCard } from './ProductCard';
 
 const responsive = {
@@ -11,9 +11,9 @@ const responsive = {
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export function ProductCarousel() {
+export function ProductCarousel({ productList }: ProductCarouselProps) {
   // eslint-disable-next-line react/jsx-props-no-spreading
-  const items = products.map((product) => <ProductCard {...product} />);
+  const items = productList.map((product) => <ProductCard key={product.id} {...product} />);
 
   return (
     <AliceCarousel
@@ -22,6 +22,7 @@ export function ProductCarousel() {
       responsive={responsive}
       controlsStrategy="alternate"
       disableButtonsControls
+      disableDotsControls
     />
   );
 }
